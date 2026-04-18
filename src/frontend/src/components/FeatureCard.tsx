@@ -34,7 +34,7 @@ export function FeatureCard({
       {/* Subtle background glow on hover */}
       <div
         className={cn(
-          "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500",
+          "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300",
           "bg-gradient-to-br",
           gradient,
         )}
@@ -49,7 +49,7 @@ export function FeatureCard({
             "w-13 h-13 rounded-xl flex items-center justify-center p-3",
             "bg-gradient-to-br",
             gradient,
-            "group-hover:scale-110 transition-smooth shadow-sm",
+            "transition-smooth shadow-sm",
           )}
         >
           <Icon className="w-6 h-6 text-primary" />

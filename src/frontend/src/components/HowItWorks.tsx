@@ -65,10 +65,6 @@ export function HowItWorks() {
         <h2 className="font-display text-4xl sm:text-5xl font-bold">
           How It <span className="text-accent-ai">Works</span>
         </h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          From raw multilingual data to actionable duplicate groups in under two
-          seconds.
-        </p>
       </motion.div>
 
       {/* Steps */}

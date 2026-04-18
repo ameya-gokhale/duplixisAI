@@ -1,0 +1,6 @@
+node_modules/
+src/frontend/node_modules/
+src/frontend/dist/
+src/backend/dist/
+src/frontend/vite.err.log
+src/frontend/vite.out.log
