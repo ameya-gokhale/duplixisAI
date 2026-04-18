@@ -61,7 +61,7 @@
       oklch(0.95 0.02 240 / 0.6),
       oklch(0.92 0.02 240 / 0.3)
     );
-    --transition-glass: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-glass: all 0.24s ease-out;
   }
 
   .dark {
@@ -117,7 +117,7 @@
       oklch(0.2 0.02 250 / 0.5),
       oklch(0.16 0.02 250 / 0.2)
     );
-    --transition-glass: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-glass: all 0.24s ease-out;
   }
 
   * {
@@ -155,11 +155,11 @@
   }
 
   .glass-card {
-    @apply backdrop-blur-md bg-[var(--glass-bg)] border border-[var(--glass-border)] rounded-lg;
+    @apply backdrop-blur-sm bg-[var(--glass-bg)] border border-[var(--glass-border)] rounded-lg;
   }
 
   .glass-card-hover {
-    @apply glass-card transition-smooth hover:bg-[oklch(0.96_0.03_260_/_0.8)] hover:shadow-lg hover:-translate-y-1;
+    @apply glass-card transition-smooth hover:bg-[oklch(0.96_0.03_260_/_0.8)] hover:shadow-md;
   }
 
   .gradient-ai {
@@ -175,11 +175,11 @@
   }
 
   .btn-primary {
-    @apply px-6 py-2.5 rounded-lg font-medium text-primary-foreground gradient-ai transition-smooth hover:shadow-lg hover:-translate-y-0.5;
+    @apply px-6 py-2.5 rounded-lg font-medium text-primary-foreground gradient-ai transition-smooth hover:shadow-md;
   }
 
   .btn-secondary {
-    @apply px-6 py-2.5 rounded-lg font-medium text-card-foreground border border-border glass-card transition-smooth hover:bg-muted/20 hover:-translate-y-0.5;
+    @apply px-6 py-2.5 rounded-lg font-medium text-card-foreground border border-border glass-card transition-smooth hover:bg-muted/20;
   }
 
   .similarity-high {

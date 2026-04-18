@@ -1,13 +1,8 @@
 /**
  * Hero — full-viewport hero section for the landing page.
  * Contains animated gradient orbs, AI visualization image,
- * floating metric badges, language pills, and primary CTAs.
+ * floating metric badges and the AI visualization image.
  */
-import { LanguageBadges } from "@/components/LanguageBadges";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Link } from "@tanstack/react-router";
-import { ArrowRight, ChevronRight } from "lucide-react";
 import { motion } from "motion/react";
 
 /* ── Animated network SVG ─────────────────────────────────────────── */
@@ -206,11 +201,7 @@ function FloatingBadge({
 }
 
 /* ── Hero component ───────────────────────────────────────────────── */
-interface HeroProps {
-  onLearnMore?: () => void;
-}
-
-export function Hero({ onLearnMore }: HeroProps) {
+export function Hero() {
   return (
     <section
       className="relative min-h-screen flex items-center justify-center pt-16 pb-20 overflow-hidden"
@@ -255,78 +246,13 @@ export function Hero({ onLearnMore }: HeroProps) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.34, 1.56, 0.64, 1] }}
-          className="space-y-8 z-10"
+          className="z-10"
         >
-          {/* Eyebrow badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Badge
-              variant="secondary"
-              className="px-3 py-1.5 text-xs font-medium glass-card border-primary/30 text-primary"
-            >
-              ✨ AI-Powered · Cross-Language · Real-Time
-            </Badge>
-          </motion.div>
-
           {/* Headline */}
           <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
             Detect Duplicate Records{" "}
             <span className="text-accent-ai">Across Languages</span> Instantly
           </h1>
-
-          {/* Subtitle */}
-          <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl">
-            Our multilingual NLP engine identifies near-duplicate records across
-            10+ languages using semantic embeddings — even when phrased
-            completely differently.
-          </p>
-
-          {/* Language badges */}
-          <LanguageBadges />
-
-          {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link to="/detect" data-ocid="hero.try-now.primary_button">
-              <Button
-                size="lg"
-                className="btn-primary border-0 text-primary-foreground gap-2 w-full sm:w-auto animate-pulse-glow"
-              >
-                Try Now — It's Free
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-            </Link>
-            <button
-              type="button"
-              onClick={onLearnMore}
-              data-ocid="hero.how-it-works.secondary_button"
-              className="btn-secondary gap-2 flex items-center justify-center"
-            >
-              How It Works
-              <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
-
-          {/* Stats row */}
-          <div className="flex gap-8 pt-2 border-t border-border/30">
-            {[
-              { value: "10+", label: "Languages" },
-              { value: "99.2%", label: "Accuracy" },
-              { value: "<2s", label: "Avg. Time" },
-              { value: "1M+", label: "Records/batch" },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center sm:text-left">
-                <div className="font-display text-2xl font-bold text-accent-ai">
-                  {stat.value}
-                </div>
-                <div className="text-xs text-muted-foreground mt-0.5 whitespace-nowrap">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
         </motion.div>
 
         {/* ── Right: AI visualization ── */}
@@ -341,7 +267,7 @@ export function Hero({ onLearnMore }: HeroProps) {
           className="relative hidden lg:flex flex-col items-center"
         >
           {/* Main image with glass overlay */}
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl animate-float w-full">
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl w-full">
             <img
               src="/assets/generated/hero-ai-multilingual.dim_1200x700.jpg"
               alt="AI Multilingual Duplicate Detection Visualization"

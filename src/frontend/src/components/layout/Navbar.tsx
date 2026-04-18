@@ -5,13 +5,6 @@ import { Link, useLocation } from "@tanstack/react-router";
 import { Cpu, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
-const NAV_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "Features", href: "/#features" },
-  { label: "How It Works", href: "/#how-it-works" },
-  { label: "About", href: "/#about" },
-];
-
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -29,17 +22,6 @@ export function Navbar() {
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
-
-  const handleHashLink = (href: string) => {
-    if (href.startsWith("/#")) {
-      const id = href.slice(2);
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-    setIsOpen(false);
-  };
 
   return (
     <header
@@ -63,31 +45,9 @@ export function Navbar() {
               <div className="absolute inset-0 rounded-xl gradient-ai opacity-0 group-hover:opacity-30 blur-lg transition-smooth" />
             </div>
             <span className="font-display font-bold text-lg text-accent-ai">
-              DupeGuard AI
+              duplixisAI
             </span>
           </Link>
-
-          {/* Desktop nav */}
-          <nav
-            className="hidden md:flex items-center gap-1"
-            data-ocid="navbar.nav"
-          >
-            {NAV_LINKS.map((link) => (
-              <button
-                key={link.href}
-                type="button"
-                onClick={() => handleHashLink(link.href)}
-                className={cn(
-                  "px-4 py-2 rounded-lg text-sm font-medium transition-smooth",
-                  "text-muted-foreground hover:text-foreground hover:bg-muted/40",
-                )}
-                data-ocid={`navbar.${link.label.toLowerCase().replace(/\s/g, "-")}.link`}
-              >
-                {link.label}
-              </button>
-            ))}
-          </nav>
-
           {/* Actions */}
           <div className="flex items-center gap-2">
             <ThemeToggle />
@@ -125,17 +85,6 @@ export function Navbar() {
           data-ocid="navbar.mobile-menu"
         >
           <nav className="flex flex-col p-3 gap-1">
-            {NAV_LINKS.map((link) => (
-              <button
-                key={link.href}
-                type="button"
-                onClick={() => handleHashLink(link.href)}
-                className="text-left px-4 py-2.5 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/40 transition-smooth"
-                data-ocid={`navbar.mobile.${link.label.toLowerCase().replace(/\s/g, "-")}.link`}
-              >
-                {link.label}
-              </button>
-            ))}
             <Link to="/detect" className="mt-1">
               <Button
                 className="w-full btn-primary border-0 text-primary-foreground"
