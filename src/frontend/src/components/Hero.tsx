@@ -334,13 +334,6 @@ export function Hero({ onLearnMore }: HeroProps) {
             <span className="text-accent-ai">Across Languages.</span> Instantly.
           </h1>
 
-          {/* Subtitle */}
-          <p className="max-w-xl text-base leading-relaxed text-muted-foreground sm:text-xl">
-            Our multilingual NLP engine identifies near-duplicate records across
-            10+ languages using semantic embeddings — even when phrased
-            completely differently.
-          </p>
-
           {/* Language badges */}
           <LanguageBadges />
 
@@ -355,7 +348,7 @@ export function Hero({ onLearnMore }: HeroProps) {
                 size="lg"
                 className="btn-primary border-0 text-primary-foreground gap-2 w-full sm:w-auto animate-pulse-glow"
               >
-                Try Now — It's Free
+                Try Now
                 <ArrowRight className="w-4 h-4" />
               </Button>
             </Link>

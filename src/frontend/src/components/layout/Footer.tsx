@@ -29,10 +29,6 @@ const FOOTER_LINKS = [
 ];
 
 export function Footer() {
-  const year = new Date().getFullYear();
-  const hostname =
-    typeof window !== "undefined" ? window.location.hostname : "";
-
   return (
     <footer
       className="bg-card border-t border-border"
@@ -40,7 +36,6 @@ export function Footer() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="mb-10 grid grid-cols-1 gap-10 md:grid-cols-3">
-          {/* Brand column */}
           <div className="space-y-4 text-center md:text-left">
             <div className="flex items-center justify-center gap-2.5 md:justify-start">
               <div className="w-9 h-9 rounded-xl gradient-ai flex items-center justify-center shadow-glass">
@@ -51,8 +46,8 @@ export function Footer() {
               </span>
             </div>
             <p className="mx-auto max-w-xs text-sm leading-relaxed text-muted-foreground md:mx-0">
-              AI-powered multilingual duplicate record detection. Find
-              near-duplicates across languages instantly with semantic NLP.
+              AI-powered multilingual duplicate record detection for reliable,
+              high-precision data cleanup.
             </p>
             <div className="flex justify-center gap-3 md:justify-start">
               {SOCIAL_LINKS.map(({ icon: Icon, label, href, ocid }) => (
@@ -71,7 +66,6 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Navigation column */}
           <div className="space-y-4 text-center md:text-left">
             <h3 className="font-display font-semibold text-sm uppercase tracking-wider text-muted-foreground">
               Navigation
@@ -89,19 +83,18 @@ export function Footer() {
             </nav>
           </div>
 
-          {/* Hackathon column */}
           <div className="space-y-4 text-center md:text-left">
             <h3 className="font-display font-semibold text-sm uppercase tracking-wider text-muted-foreground">
               Project Info
             </h3>
             <div className="space-y-2 text-sm text-muted-foreground">
               <p>
-                <span className="text-foreground font-medium">Team:</span> NLP
-                Fusion Team
+                <span className="text-foreground font-medium">Team:</span>{" "}
+                EliteCircle
               </p>
               <p>
                 <span className="text-foreground font-medium">Hackathon:</span>{" "}
-                AI Innovation Challenge 2025
+                Innov8
               </p>
               <div className="pt-2">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full glass-card text-xs font-medium text-primary">
@@ -113,20 +106,9 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div className="flex flex-col items-center justify-between gap-3 border-t border-border pt-8 text-center text-xs text-muted-foreground sm:flex-row sm:text-left">
-          <p>
-            © {year}. Built with love using{" "}
-            <a
-              href={`https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(hostname)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:text-accent transition-colors"
-            >
-              caffeine.ai
-            </a>
-          </p>
-          <p>Multilingual AI · Semantic Deduplication · Cross-Language NLP</p>
+          <p>© 2026 Duplixis AI. All rights reserved.</p>
+          <p>Secure multilingual duplicate detection for modern data workflows.</p>
         </div>
       </div>
     </footer>
