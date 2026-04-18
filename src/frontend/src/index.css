@@ -162,6 +162,10 @@
     @apply glass-card transition-smooth hover:bg-[oklch(0.96_0.03_260_/_0.8)] hover:shadow-md;
   }
 
+  .dark .glass-card-hover {
+    @apply hover:bg-white;
+  }
+
   .gradient-ai {
     background: var(--gradient-ai);
   }
