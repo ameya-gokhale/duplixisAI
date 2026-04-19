@@ -8,7 +8,7 @@ const STEPS = [
     icon: Upload,
     title: "Upload Records",
     description:
-      "Upload CSV/JSON or enter records manually. We accept any text data in any language — no preprocessing needed.",
+      "Upload CSV/JSON or enter records manually. We accept any text data in any language - no preprocessing needed.",
     color: "text-primary",
     iconBg: "from-primary/25 to-primary/5",
     accent: "oklch(0.68 0.22 280 / 0.6)",
@@ -48,7 +48,6 @@ const STEPS = [
 export function HowItWorks() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      {/* Section header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -65,17 +64,11 @@ export function HowItWorks() {
         <h2 className="font-display text-3xl font-bold sm:text-5xl">
           How It <span className="text-accent-ai">Works</span>
         </h2>
-        <p className="mx-auto max-w-2xl text-base text-muted-foreground sm:text-lg">
-          From raw multilingual data to actionable duplicate groups in under two
-          seconds.
-        </p>
       </motion.div>
 
-      {/* Steps */}
       <div className="relative grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-        {/* Connector line (desktop) */}
         <div
-          className="hidden lg:block absolute top-14 left-[12.5%] right-[12.5%] h-px z-0"
+          className="absolute left-[12.5%] right-[12.5%] top-14 z-0 hidden h-px lg:block"
           style={{
             background:
               "linear-gradient(90deg, oklch(0.68 0.22 280 / 0.2), oklch(0.72 0.2 290 / 0.5), oklch(0.62 0.24 135 / 0.2))",
@@ -94,24 +87,21 @@ export function HowItWorks() {
               delay: i * 0.12,
               ease: [0.34, 1.56, 0.64, 1],
             }}
-            className="relative z-10 flex flex-col items-center text-center space-y-4 group"
+            className="group relative z-10 flex flex-col items-center space-y-4 text-center"
             data-ocid={`how-it-works.step.${step.step}`}
           >
-            {/* Step number pill */}
             <div
-              className={`text-[10px] font-bold uppercase tracking-widest ${step.color} mb-1`}
+              className={`mb-1 text-[10px] font-bold uppercase tracking-widest ${step.color}`}
             >
               Step {step.step}
             </div>
 
-            {/* Icon circle */}
             <motion.div
               whileHover={{ scale: 1.08 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className={`w-28 h-28 rounded-2xl glass-card bg-gradient-to-br ${step.iconBg} flex items-center justify-center relative overflow-hidden`}
+              className={`relative flex h-28 w-28 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br ${step.iconBg} glass-card`}
               style={{ boxShadow: `0 0 0 1px ${step.accent}` }}
             >
-              {/* Pulse ring */}
               <motion.div
                 className="absolute inset-0 rounded-2xl"
                 style={{ border: `1px solid ${step.accent}` }}
@@ -123,24 +113,17 @@ export function HowItWorks() {
                   delay: i * 0.5,
                 }}
               />
-              <step.icon className={`w-10 h-10 ${step.color}`} />
+              <step.icon className={`h-10 w-10 ${step.color}`} />
             </motion.div>
 
-            <h3 className="font-display font-semibold text-base text-foreground leading-snug">
+            <h3 className="font-display text-base font-semibold leading-snug text-foreground">
               {step.title}
             </h3>
-            <p className="text-sm text-muted-foreground leading-relaxed max-w-[200px]">
+            <p className="max-w-[200px] text-sm leading-relaxed text-muted-foreground">
               {step.description}
             </p>
           </motion.div>
         ))}
-      </div>
-
-      {/* Arrow indicators between steps (mobile) */}
-      <div className="flex justify-center mt-10 lg:hidden">
-        <p className="text-xs text-muted-foreground tracking-wide">
-          Upload → Embed → Compare → Results
-        </p>
       </div>
     </div>
   );

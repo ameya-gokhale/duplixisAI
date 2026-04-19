@@ -1,3 +1,4 @@
+import { LANGUAGE_OPTIONS } from "@/data/languages";
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -6,7 +7,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { LANGUAGE_OPTIONS } from "@/data/mockData";
 import { useAppStore } from "@/store/useAppStore";
 import type { Language } from "@/types";
 import { Search } from "lucide-react";
