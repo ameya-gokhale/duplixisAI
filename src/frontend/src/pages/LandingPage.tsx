@@ -4,7 +4,6 @@
 import { FeatureCard } from "@/components/FeatureCard";
 import { Hero } from "@/components/Hero";
 import { HowItWorks } from "@/components/HowItWorks";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "@tanstack/react-router";
 import { ArrowRight, Globe, Layers, Shield, Zap } from "lucide-react";
@@ -83,14 +82,8 @@ export function LandingPage() {
             transition={{ duration: 0.6 }}
             className="mb-12 space-y-4 text-center sm:mb-16"
           >
-            <Badge
-              variant="secondary"
-              className="glass-card border-primary/30 text-primary px-3 py-1.5"
-            >
-              Core Capabilities
-            </Badge>
             <h2 className="font-display text-3xl font-bold sm:text-5xl">
-              Why Duplixis <span className="text-accent-ai">AI</span>?
+              Why duplixisAI?
             </h2>
           </motion.div>
 

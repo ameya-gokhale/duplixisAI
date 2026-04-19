@@ -1,4 +1,4 @@
-import { LANGUAGE_OPTIONS } from "@/data/mockData";
+import { LANGUAGE_OPTIONS } from "@/data/languages";
 import type { Language, SimilarityLevel } from "@/types";
 import type { ClassValue } from "clsx";
 import { clsx } from "clsx";

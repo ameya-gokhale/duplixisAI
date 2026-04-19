@@ -2,6 +2,8 @@
 
 export type Language =
   | "en"
+  | "hi"
+  | "mr"
   | "ja"
   | "zh"
   | "ar"
@@ -10,7 +12,9 @@ export type Language =
   | "es"
   | "ko"
   | "pt"
-  | "ru";
+  | "ru"
+  | "it"
+  | "id";
 
 export interface LanguageOption {
   code: Language;

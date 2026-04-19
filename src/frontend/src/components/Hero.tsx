@@ -4,10 +4,7 @@
  * floating metric badges and the AI visualization image.
  */
 import { LanguageBadges } from "@/components/LanguageBadges";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Link } from "@tanstack/react-router";
-import { ArrowRight, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { motion } from "motion/react";
 
 /* ── Animated network SVG ─────────────────────────────────────────── */
@@ -339,19 +336,6 @@ export function Hero({ onLearnMore }: HeroProps) {
 
           {/* CTA buttons */}
           <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
-            <Link
-              to="/detect"
-              data-ocid="hero.try-now.primary_button"
-              className="w-full sm:w-auto"
-            >
-              <Button
-                size="lg"
-                className="btn-primary border-0 text-primary-foreground gap-2 w-full sm:w-auto animate-pulse-glow"
-              >
-                Try Now
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-            </Link>
             <button
               type="button"
               onClick={onLearnMore}
@@ -363,24 +347,6 @@ export function Hero({ onLearnMore }: HeroProps) {
             </button>
           </div>
 
-          {/* Stats row */}
-          <div className="grid grid-cols-2 gap-4 border-t border-border/30 pt-4 sm:flex sm:flex-wrap sm:gap-8">
-            {[
-              { value: "10+", label: "Languages" },
-              { value: "99.2%", label: "Accuracy" },
-              { value: "<2s", label: "Avg. Time" },
-              { value: "1M+", label: "Records/batch" },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center sm:text-left">
-                <div className="font-display text-xl font-bold text-accent-ai sm:text-2xl">
-                  {stat.value}
-                </div>
-                <div className="text-xs text-muted-foreground mt-0.5 whitespace-nowrap">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
         </motion.div>
 
         {/* ── Right: AI visualization ── */}
@@ -400,27 +366,6 @@ export function Hero({ onLearnMore }: HeroProps) {
             </div>
           </div>
 
-          {/* Floating: Duplicate Match badge */}
-          <FloatingBadge
-            className="absolute -bottom-5 -left-8 min-w-[180px]"
-            delay={0.65}
-            initialY={10}
-          >
-            <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-full gradient-ai flex items-center justify-center text-primary-foreground font-bold text-sm flex-shrink-0">
-                85%
-              </div>
-              <div>
-                <div className="text-xs font-semibold text-foreground">
-                  Duplicate Match
-                </div>
-                <div className="text-xs text-muted-foreground">
-                  EN ↔ ES detected
-                </div>
-              </div>
-            </div>
-          </FloatingBadge>
-
           {/* Floating: Model Active badge */}
           <FloatingBadge
             className="absolute -top-3 -right-5"
@@ -430,20 +375,6 @@ export function Hero({ onLearnMore }: HeroProps) {
             <div className="flex items-center gap-2 text-xs">
               <span className="w-2 h-2 rounded-full bg-chart-1 animate-pulse" />
               <span className="text-foreground font-medium">Model Active</span>
-            </div>
-          </FloatingBadge>
-
-          {/* Floating: processed count */}
-          <FloatingBadge
-            className="absolute top-1/3 -left-10"
-            delay={1}
-            initialY={0}
-          >
-            <div className="text-center">
-              <div className="text-sm font-bold text-accent-ai">1.2M</div>
-              <div className="text-[10px] text-muted-foreground">
-                records scanned
-              </div>
             </div>
           </FloatingBadge>
         </motion.div>

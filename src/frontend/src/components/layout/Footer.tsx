@@ -107,7 +107,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col items-center justify-between gap-3 border-t border-border pt-8 text-center text-xs text-muted-foreground sm:flex-row sm:text-left">
-          <p>© 2026 Duplixis AI. All rights reserved.</p>
+          <p>© 2026 duplixisAI. All rights reserved.</p>
           <p>Secure multilingual duplicate detection for modern data workflows.</p>
         </div>
       </div>

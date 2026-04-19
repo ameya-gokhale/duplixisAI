@@ -56,10 +56,10 @@ export function FeatureCard({
         </div>
 
         <div className="space-y-2">
-          <h3 className="font-display font-semibold text-foreground text-base tracking-tight">
+          <h3 className="font-display font-semibold text-foreground text-base tracking-tight dark:group-hover:text-black">
             {title}
           </h3>
-          <p className="text-sm text-muted-foreground leading-relaxed">
+          <p className="text-sm text-muted-foreground leading-relaxed dark:group-hover:text-black/80">
             {description}
           </p>
         </div>
@@ -67,10 +67,10 @@ export function FeatureCard({
         {/* Optional stat */}
         {stat && (
           <div className="pt-2 border-t border-border/40 flex items-baseline gap-1.5">
-            <span className="font-display text-xl font-bold text-accent-ai">
+            <span className="font-display text-xl font-bold text-accent-ai dark:group-hover:text-black">
               {stat.value}
             </span>
-            <span className="text-xs text-muted-foreground">{stat.label}</span>
+            <span className="text-xs text-muted-foreground dark:group-hover:text-black/70">{stat.label}</span>
           </div>
         )}
       </div>
